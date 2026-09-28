@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crocodile-mcp"
+version = "0.1.0"
+description = "MCP server that reads and generates Crocodile Physics 1.7 simulation files (.cyp)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["mcp>=1.2"]
+keywords = ["mcp", "crocodile-physics", "electronics", "simulation", "education"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+crocodile-mcp = "crocodile_mcp.server:main"
+
+[tool.setuptools]
+packages = ["crocodile_mcp"]
+
+[tool.setuptools.package-data]
+crocodile_mcp = ["templates.json"]
